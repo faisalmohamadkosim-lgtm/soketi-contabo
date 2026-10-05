@@ -1,0 +1,6 @@
+# Salin ke /etc/caddy/Caddyfile lalu: systemctl reload caddy
+# Caddy mengurus sertifikat Let's Encrypt dan upgrade WebSocket otomatis.
+# Ganti domain kalau perlu; A record-nya harus sudah menunjuk ke IP VPS.
+pusher.callhub.id {
+    reverse_proxy 127.0.0.1:6001
+}

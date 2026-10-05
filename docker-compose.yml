@@ -1,0 +1,15 @@
+name: soketi
+
+# Versi PRODUCTION (Contabo). Port hanya dibuka ke 127.0.0.1 -- Docker menembus ufw,
+# jadi tanpa ini 6001/9601 terbuka ke internet. Akses publik lewat Caddy (lihat Caddyfile).
+services:
+  app:
+    image: quay.io/soketi/soketi:1.6-16-debian
+    container_name: soketi_app
+    restart: always
+    command: ["node", "/app/bin/server.js", "start", "--config=/soketi/config.json"]
+    ports:
+      - "127.0.0.1:6001:6001"   # WebSocket + Pusher HTTP API (hanya lewat Caddy)
+      - "127.0.0.1:9601:9601"   # metrik /metrics (hanya lewat SSH)
+    volumes:
+      - ./config/soketi.json:/soketi/config.json:ro

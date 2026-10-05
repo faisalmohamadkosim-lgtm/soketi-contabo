@@ -1,0 +1,4 @@
+# Key & secret asli -- JANGAN pernah di-commit
+config/soketi.json
+.env
+*.local.php

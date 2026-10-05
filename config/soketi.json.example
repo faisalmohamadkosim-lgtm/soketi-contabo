@@ -1,0 +1,17 @@
+{
+  "appManager.driver": "array",
+  "appManager.array.apps": [
+    {
+      "id": "call2go",
+      "key": "REPLACE_WITH_REAL_KEY",
+      "secret": "REPLACE_WITH_REAL_SECRET",
+      "maxConnections": -1,
+      "enableClientMessages": false,
+      "enabled": true,
+      "maxBackendEventsPerSecond": -1,
+      "maxClientEventsPerSecond": -1,
+      "maxReadRequestsPerSecond": -1,
+      "webhooks": []
+    }
+  ]
+}
